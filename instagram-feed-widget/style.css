@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f7f5ef;
+  color: #2c2c2c;
+}
+
+.wrap {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 14px;
+  background: #fcfbf7;
+  border: 1px solid #ece7dd;
+  border-radius: 18px;
+}
+
+.topbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid #ddd6c8;
+  background: #fffdf8;
+  color: #3c372f;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f7f0e5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  aspect-ratio: 1 / 1;
+  background: #eee7dc;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.card:hover::after {
+  content: "Drag to reorder";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(34, 30, 25, 0.7);
+  color: white;
+  font-size: 12px;
+  padding: 6px;
+  text-align: center;
+}
+
+.date-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(34, 30, 25, 0.72);
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 7px;
+  border-radius: 8px;
+}
+
+.carousel-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #222;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+
+.empty-card {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(90vw, 500px);
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.modal-close,
+.modal-prev,
+.modal-next {
+  border: none;
+  background: rgba(34, 30, 25, 0.9);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
